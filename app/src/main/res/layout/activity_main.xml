@@ -32,8 +32,8 @@
 
 
     <Button
+        android:layout_marginTop="32dp"
         android:text="Ghi vao the nho"
-
         android:onClick="writeToSDCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -44,6 +44,23 @@
         android:text="Hien thi du lieu tu the nho"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+
+    <Button
+        android:layout_marginTop="32dp"
+        android:text="Save to Shared Preference"
+        android:onClick="saveToSharedPref"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:onClick="loadFromSharedPref"
+        android:text="Load from Shared Preference"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
 
 
 

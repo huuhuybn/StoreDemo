@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else {
             // Sorry
-            
+
         }
 
 
@@ -123,6 +123,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void loadFromSDCard(View view) {
 
+
+    }
+
+    public void saveToSharedPref(View view) {
+
+    }
+
+    public void loadFromSharedPref(View view) {
 
     }
 }
