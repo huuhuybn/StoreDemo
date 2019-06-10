@@ -1,5 +1,7 @@
 package com.dotplays.storedemo;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -128,9 +130,35 @@ public class MainActivity extends AppCompatActivity {
 
     public void saveToSharedPref(View view) {
 
+        // khoi tao doi tuong sharePref voi ten file la MyShare. mode private
+        SharedPreferences sharedPreferences = getSharedPreferences("MyShare", Context.MODE_PRIVATE);
+
+        // khoi tao doi tuong editor.
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        String data = edtData.getText().toString().trim();
+
+        // luu du lieu duoi dang cap key - value. key la "data", value la bien data
+        editor.putString("data", data);
+
+        // save
+        editor.apply();
+
+
+        // clear du lieu tren editText
+        edtData.setText("");
+
     }
 
     public void loadFromSharedPref(View view) {
+
+        SharedPreferences sharedPreferences = getSharedPreferences("MyShare", Context.MODE_PRIVATE);
+
+        String data = sharedPreferences.getString("data", null);
+
+        if (data != null) {
+            edtData.setText(data);
+        }
 
     }
 }
